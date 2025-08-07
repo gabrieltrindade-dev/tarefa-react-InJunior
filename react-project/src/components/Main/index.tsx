@@ -1,17 +1,10 @@
-
-import paisagem from '../../assets/paisagem.jpg'
+import PerfilAdm from "../PefilPessoal";
+import styles from "./styles.module.css"
 
 export default function Main() {
     return(
-        <main>
-            <div>
-                <img src={paisagem} alt="Paisagem" />
-                <div>
-                    <img src="" alt="" />
-                    <h2>Gabriel Trindade</h2>
-                    <p>Dev front-end</p>
-                </div>
-            </div>
+        <main className={styles.main}>
+            <PerfilAdm/>
         </main>
     )
 }
