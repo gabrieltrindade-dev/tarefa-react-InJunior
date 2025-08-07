@@ -1,0 +1,54 @@
+.cardAdm {
+  width: 356px;
+  height: 461px;
+  background-color: rgba(14, 14, 27, 1);
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  margin-top: 29px;
+  margin-left: 64px;
+  display: flex;
+  flex-direction: column;
+}
+
+#paisagem {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.fotoEtexto {
+  flex: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#fotoAdm {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(0, 75, 150, 1);
+  background-color: white;
+  position: absolute;
+  top: -55px; 
+}
+
+.descricao {
+  margin-top: 36px; 
+}
+
+.descricao h2 {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.descricao p {
+  margin-top: 12px;
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
