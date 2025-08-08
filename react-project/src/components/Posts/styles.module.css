@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+.post {
+    background-color: rgba(14, 14, 27, 1);
+    color: #fff;
+    width: 921px;
+    min-height: 656px; 
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 32px;
+    box-sizing: border-box;
+    margin-top: 29px;   
+}
+
+.identificacao {
+    width: 842px;
+    height: 73px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.perfil img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(0, 75, 150, 1);
+}
+
+.textoPerfil h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 7px;
+    color: white;
+}
+
+.textoPerfil p {  
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+}
+
+#horaPost {
+    color: rgba(204, 204, 204, 1);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.textoPost {
+    max-width: 842px;
+    margin: 60px auto; 
+}
+
+.textoPost p {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(204, 204, 204, 1);
+}
+
+.form {
+    width: 842px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.form h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.form textarea {
+  width: 842px;
+  height: 112px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: rgba(221, 221, 221, 1);
+  color: rgba(0, 0, 0, 1);
+  font-size: 16px;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.form textarea::placeholder {
+    color: rgba(68, 68, 68, 1);
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Inter';
+}
+
+.form button {
+    width: 139px;
+    height: 47px;
+    background-color: rgba(3, 111, 219, 1);
+    color: #fff;
+    border: none;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
