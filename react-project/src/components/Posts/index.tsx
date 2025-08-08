@@ -12,7 +12,7 @@ export default function Posts(props: PostsProps) {
     return(
         <div className={styles.post}>
             <div className={styles.identificacao}>
-                <div className={styles.perfil}>
+                <div className={styles.perfil}> 
                     <img src={props.foto} alt="Foto de perfil" />
                     <div className={styles.textoPerfil}>
                         <h3>{props.nome}</h3>
@@ -32,7 +32,5 @@ export default function Posts(props: PostsProps) {
                 <button type="submit">Comentar</button>
             </form>
         </div>
-
-
     )
 }
