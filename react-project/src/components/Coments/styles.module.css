@@ -1,0 +1,98 @@
+.comentario {
+  width: 842px;
+  height: 150px;
+  display: flex;
+  background-color: transparent; 
+  gap: 16px;
+  padding: 40px;
+}
+
+.fotoPerfil {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 0; 
+}
+
+.corpo {
+  width: 766px;
+  height: 120px;
+  background-color: #1e1e2e; 
+  border-radius: 8px;
+  position: relative;
+  padding: 11px 25px 0 20px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.nome {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.hora {
+  font-size: 14px;
+  color: rgba(153, 153, 153, 1);
+
+}
+
+.botaoExcluir {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.botaoExcluir img {
+  width: 24px;
+  height: 24px;
+}
+
+.texto {
+  margin-top: 29px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+.rodape {
+  position: absolute;
+  bottom: -25px; 
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.botaoLike {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.botaoLike img {
+  width: 16px;
+  height: 16px;
+}
+
+.botaoLike::after {
+  content: "•";
+  margin-left: 6px;
+  color: white;
+}
+
+.curtido {
+  border: 2px solid blue;
+  border-radius: 4px;
+}
