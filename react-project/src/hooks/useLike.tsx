@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function useLike() {
-  const [likes, setLikes] = useState(0);
+export default function useLike(initialLikes = 0) {
+  const [likes, setLikes] = useState(initialLikes);
   const [curtido, setCurtido] = useState(false);
 
   function toggleLike() {
