@@ -1,18 +1,19 @@
 import styles from "./styles.module.css";
 import useLike from "../../hooks/useLike";
-import likeImg from "../../assets/Like.png"
-import lixeiraImg from "../../assets/Trash.png"
+import likeImg from "../../assets/Like.png";
+import lixeiraImg from "../../assets/Trash.png";
 
 interface ComentarioProps {
   foto: string;
   nome: string;
   hora: string;
   texto: string;
+  initialLikes: number;
   onExcluir?: () => void;
 }
 
-export default function Comentario({ foto, nome, hora, texto, onExcluir }: ComentarioProps) {
-  const { likes, curtido, toggleLike } = useLike();
+export default function Comentario({ foto, nome, hora, texto, initialLikes, onExcluir }: ComentarioProps) {
+  const { likes, curtido, toggleLike } = useLike(initialLikes);
 
   return (
     <div className={styles.comentario}>
@@ -32,13 +33,14 @@ export default function Comentario({ foto, nome, hora, texto, onExcluir }: Comen
         <p className={styles.texto}>{texto}</p>
 
         <div className={styles.rodape}>
-          <button
-            className={`${styles.botaoLike} ${curtido ? styles.curtido : ""}`}
-            onClick={toggleLike}
-          >
+          <button className={`${styles.botaoLike} ${curtido ? styles.curtido : ""}`} onClick={toggleLike}>
             <img src={likeImg} alt="Like" />
-            <span>{likes}</span>
           </button>
+          <div className={styles.likeInfo}>
+            <p>Like</p>
+            <span className={styles.separador}>•</span>
+            <span className={styles.likesCount}>{likes}</span>
+          </div>
         </div>
       </div>
     </div>
