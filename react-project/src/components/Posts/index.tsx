@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 import Comentario from "../Coments";
+import fotoGabriel from "../../assets/fotoadm.jpg"; 
 
 export interface ComentarioData {
+  id: number;
   foto: string;
   nome: string;
   hora: string;
   texto: string;
+  initialLikes?: number;
 }
 
 interface PostsProps {
@@ -15,7 +18,7 @@ interface PostsProps {
   cargo: string;
   paragrafo: string;
   hora: string;
-  comentariosIniciais?: ComentarioData[]; 
+  comentariosIniciais?: ComentarioData[];
 }
 
 export default function Posts({
@@ -26,7 +29,6 @@ export default function Posts({
   hora,
   comentariosIniciais = []
 }: PostsProps) {
-
   const [comentarios, setComentarios] = useState<ComentarioData[]>(
     () => comentariosIniciais
   );
@@ -38,19 +40,26 @@ export default function Posts({
     const texto = novoComentario.trim();
     if (!texto) return;
 
+    const dadosAdm = {
+      foto: fotoGabriel, 
+      nome: "Gabriel Trindade"
+    };
+
     const novo: ComentarioData = {
-      foto, 
-      nome, 
+      id: new Date().getTime(),
+      foto: dadosAdm.foto,
+      nome: dadosAdm.nome,
       hora: "agora mesmo",
-      texto
+      texto,
+      initialLikes: 0,
     };
 
     setComentarios((prev) => [...prev, novo]);
     setNovoComentario("");
   }
 
-  function handleDelete(index: number) {
-    setComentarios((prev) => prev.filter((_, i) => i !== index));
+  function handleDelete(idParaExcluir: number) {
+    setComentarios((prev) => prev.filter((comentario) => comentario.id !== idParaExcluir));
   }
 
   return (
@@ -81,14 +90,15 @@ export default function Posts({
       </form>
 
       <div className={styles.listaComentarios}>
-        {comentarios.map((comentario, index) => (
+        {comentarios.map((comentario) => (
           <Comentario
-            key={index} 
+            key={comentario.id}
             foto={comentario.foto}
             nome={comentario.nome}
             hora={comentario.hora}
             texto={comentario.texto}
-            onExcluir={() => handleDelete(index)}
+            initialLikes={comentario.initialLikes ?? 0}
+            onExcluir={() => handleDelete(comentario.id)}
           />
         ))}
       </div>
