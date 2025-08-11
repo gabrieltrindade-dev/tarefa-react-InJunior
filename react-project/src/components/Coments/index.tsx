@@ -6,13 +6,20 @@ import lixeiraImg from "../../assets/Trash.png";
 interface ComentarioProps {
   foto: string;
   nome: string;
-  hora: string;
+  hora: string; // A hora agora é uma string
   texto: string;
   initialLikes: number;
   onExcluir?: () => void;
 }
 
-export default function Comentario({ foto, nome, hora, texto, initialLikes, onExcluir }: ComentarioProps) {
+export default function Comentario({
+  foto,
+  nome,
+  hora,
+  texto,
+  initialLikes,
+  onExcluir,
+}: ComentarioProps) {
   const { likes, curtido, toggleLike } = useLike(initialLikes);
 
   return (
@@ -23,17 +30,22 @@ export default function Comentario({ foto, nome, hora, texto, initialLikes, onEx
         <div className={styles.cabecalho}>
           <div>
             <h4 className={styles.nome}>{nome}</h4>
-            <span className={styles.hora}>Cerca de {hora}</span>
+            <span className={styles.hora}>{hora}</span> {/* Agora mostra a hora atual */}
           </div>
-          <button className={styles.botaoExcluir} onClick={onExcluir} title="Excluir comentário">
+          <button
+            className={styles.botaoExcluir}
+            onClick={onExcluir}
+            title="Excluir comentário"
+          >
             <img src={lixeiraImg} alt="Excluir" />
           </button>
         </div>
 
         <p className={styles.texto}>{texto}</p>
 
-        <div className={styles.rodape}>
-          <button className={`${styles.botaoLike} ${curtido ? styles.curtido : ""}`} onClick={toggleLike}>
+        {/* Mudei a classe .curtido para o contêiner .rodape */}
+        <div className={`${styles.rodape} ${curtido ? styles.curtido : ""}`}>
+          <button className={styles.botaoLike} onClick={toggleLike}>
             <img src={likeImg} alt="Like" />
           </button>
           <div className={styles.likeInfo}>

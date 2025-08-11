@@ -29,7 +29,6 @@
 .cabecalho {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
 }
 
 .nome {
@@ -41,7 +40,6 @@
 .hora {
   font-size: 14px;
   color: rgba(153, 153, 153, 1);
-
 }
 
 .botaoExcluir {
@@ -53,6 +51,7 @@
 .botaoExcluir img {
   width: 24px;
   height: 24px;
+  padding-top: 8px;
 }
 
 .texto {
@@ -64,12 +63,25 @@
 
 .rodape {
   position: absolute;
-  bottom: -25px; 
-  left: 0;
+  bottom: -35px; 
+  left: 3px;
   display: flex;
   align-items: center;
   gap: 4px;
 }
+
+/* Quando o rodapé tiver a classe .curtido, os elementos internos mudam de cor */
+.rodape.curtido p,
+.rodape.curtido .separador,
+.rodape.curtido .likesCount {
+  color: #0087ff; /* Cor azul desejada para o texto */
+}
+
+.rodape.curtido .botaoLike img {
+  /* Filtro CSS para mudar a cor da imagem para azul */
+  filter: brightness(0) saturate(100%) invert(43%) sepia(90%) saturate(1478%) hue-rotate(187deg) brightness(101%) contrast(101%);
+}
+
 
 .botaoLike {
   display: flex;
@@ -78,21 +90,41 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #aaa;
 }
 
 .botaoLike img {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
+  /* Estado normal da imagem (não curtido) */
+  filter: none;
 }
 
-.botaoLike::after {
-  content: "•";
-  margin-left: 6px;
-  color: white;
+.likeInfo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 4px;
+  position: relative;
+  top: -1px;
 }
 
-.curtido {
-  border: 2px solid blue;
-  border-radius: 4px;
+/* Cor padrão do texto */
+.likeInfo p {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  color: rgba(221, 221, 221, 1);
+}
+
+.separador {
+  color: rgba(221, 221, 221, 1);
+  font-size: 16px;
+  line-height: 1;
+  margin: 0;
+}
+
+.likesCount {
+  color: rgba(221, 221, 221, 1);
+  font-size: 14px;
+  font-weight: bold;
 }

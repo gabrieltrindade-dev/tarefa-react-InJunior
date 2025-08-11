@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 import Comentario from "../Coments";
-import fotoGabriel from "../../assets/fotoadm.jpg"; 
+import fotoGabriel from "../../assets/fotoadm.jpg";
 
 export interface ComentarioData {
   id: number;
   foto: string;
   nome: string;
-  hora: string;
+  hora: string; // A propriedade 'hora' agora aceita a string de hora
   texto: string;
   initialLikes?: number;
 }
@@ -17,7 +17,7 @@ interface PostsProps {
   nome: string;
   cargo: string;
   paragrafo: string;
-  hora: string;
+  hora: string; // A propriedade 'hora' do post também é uma string
   comentariosIniciais?: ComentarioData[];
 }
 
@@ -41,15 +41,21 @@ export default function Posts({
     if (!texto) return;
 
     const dadosAdm = {
-      foto: fotoGabriel, 
+      foto: fotoGabriel,
       nome: "Gabriel Trindade"
     };
+    
+    // Captura a data e hora atuais e formata
+    const horaAtual = new Date().toLocaleTimeString('pt-BR', {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
 
     const novo: ComentarioData = {
       id: new Date().getTime(),
       foto: dadosAdm.foto,
       nome: dadosAdm.nome,
-      hora: "agora mesmo",
+      hora: horaAtual, // Usa a hora formatada, como já estava
       texto,
       initialLikes: 0,
     };
@@ -72,7 +78,7 @@ export default function Posts({
             <p>{cargo}</p>
           </div>
         </div>
-        <p id={styles.horaPost}>Publicado há {hora}</p>
+        <p id={styles.horaPost}>Postado {hora}</p> {/* Agora mostra a hora atual */}
       </div>
 
       <div className={styles.textoPost}>
