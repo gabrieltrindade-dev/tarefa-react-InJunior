@@ -30,7 +30,7 @@ export default function Comentario({
         <div className={styles.cabecalho}>
           <div>
             <h4 className={styles.nome}>{nome}</h4>
-            <span className={styles.hora}>{hora}</span> {}
+            <span className={styles.hora}>{hora}</span> 
           </div>
           <button
             className={styles.botaoExcluir}
@@ -43,7 +43,6 @@ export default function Comentario({
 
         <p className={styles.texto}>{texto}</p>
 
-        {}
         <div className={`${styles.rodape} ${curtido ? styles.curtido : ""}`}>
           <button className={styles.botaoLike} onClick={toggleLike}>
             <img src={likeImg} alt="Like" />

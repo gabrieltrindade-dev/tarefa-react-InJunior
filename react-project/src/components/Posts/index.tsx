@@ -77,7 +77,7 @@ export default function Posts({
             <p>{cargo}</p>
           </div>
         </div>
-        <p id={styles.horaPost}>Publicado {hora}</p> {}
+        <p id={styles.horaPost}>Publicado {hora}</p> 
       </div>
 
       <div className={styles.textoPost}>
