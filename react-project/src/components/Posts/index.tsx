@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-import Comentario from "../Coments";
+import Comentario from "../Comments";
 import fotoGabriel from "../../assets/fotoadm.jpg";
 
 export interface ComentarioData {
