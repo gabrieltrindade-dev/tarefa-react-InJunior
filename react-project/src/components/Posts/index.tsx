@@ -7,7 +7,7 @@ export interface ComentarioData {
   id: number;
   foto: string;
   nome: string;
-  hora: string; // A propriedade 'hora' agora aceita a string de hora
+  hora: string;
   texto: string;
   initialLikes?: number;
 }
@@ -17,7 +17,7 @@ interface PostsProps {
   nome: string;
   cargo: string;
   paragrafo: string;
-  hora: string; // A propriedade 'hora' do post também é uma string
+  hora: string; 
   comentariosIniciais?: ComentarioData[];
 }
 
@@ -45,7 +45,6 @@ export default function Posts({
       nome: "Gabriel Trindade"
     };
     
-    // Captura a data e hora atuais e formata
     const horaAtual = new Date().toLocaleTimeString('pt-BR', {
       hour: '2-digit',
       minute: '2-digit',
@@ -55,7 +54,7 @@ export default function Posts({
       id: new Date().getTime(),
       foto: dadosAdm.foto,
       nome: dadosAdm.nome,
-      hora: horaAtual, // Usa a hora formatada, como já estava
+      hora: horaAtual, 
       texto,
       initialLikes: 0,
     };
@@ -78,7 +77,7 @@ export default function Posts({
             <p>{cargo}</p>
           </div>
         </div>
-        <p id={styles.horaPost}>Postado {hora}</p> {/* Agora mostra a hora atual */}
+        <p id={styles.horaPost}>Publicado {hora}</p> {}
       </div>
 
       <div className={styles.textoPost}>

@@ -4,6 +4,7 @@
 .post {
     background-color: rgba(14, 14, 27, 1);
     color: #fff;
+    min-width: 921px;
     min-height: 615px; 
     border-radius: 10px;
     display: flex;

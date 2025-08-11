@@ -6,7 +6,7 @@ import lixeiraImg from "../../assets/Trash.png";
 interface ComentarioProps {
   foto: string;
   nome: string;
-  hora: string; // A hora agora é uma string
+  hora: string;
   texto: string;
   initialLikes: number;
   onExcluir?: () => void;
@@ -30,7 +30,7 @@ export default function Comentario({
         <div className={styles.cabecalho}>
           <div>
             <h4 className={styles.nome}>{nome}</h4>
-            <span className={styles.hora}>{hora}</span> {/* Agora mostra a hora atual */}
+            <span className={styles.hora}>{hora}</span> {}
           </div>
           <button
             className={styles.botaoExcluir}
@@ -43,7 +43,7 @@ export default function Comentario({
 
         <p className={styles.texto}>{texto}</p>
 
-        {/* Mudei a classe .curtido para o contêiner .rodape */}
+        {}
         <div className={`${styles.rodape} ${curtido ? styles.curtido : ""}`}>
           <button className={styles.botaoLike} onClick={toggleLike}>
             <img src={likeImg} alt="Like" />

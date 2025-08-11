@@ -12,7 +12,7 @@ export default function PerfilAdm() {
                 <img id={styles.fotoAdm} src={foto} alt="Foto Adm" />
                 <div className={styles.descricao}>
                     <h2>Gabriel Trindade</h2>
-                    <p>Dev front-end</p>
+                    <p>Dev Front-end</p>
                 </div>
 
             </div>
