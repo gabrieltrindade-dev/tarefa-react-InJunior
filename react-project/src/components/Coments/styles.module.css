@@ -1,9 +1,10 @@
 .comentario {
   width: 842px;
-  height: 150px;
   display: flex;
   gap: 16px;
   padding: 40px;
+  margin-bottom: 30px;
+  position: relative;
 }
 
 .fotoPerfil {
@@ -11,18 +12,18 @@
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  margin-top: 0; 
+  margin-top: 0;
 }
 
 .corpo {
   width: 766px;
-  height: 120px;
-  background-color: #1e1e2e; 
+  min-height: 100px;
+  background-color: #1e1e2e;
   border-radius: 8px;
-  position: relative;
-  padding: 11px 25px 0 20px; 
+  padding: 11px 25px 11px 20px;
   display: flex;
   flex-direction: column;
+  gap: 25px;
 }
 
 .cabecalho {
@@ -54,7 +55,6 @@
 }
 
 .texto {
-  margin-top: 29px;
   font-size: 14px;
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
@@ -62,8 +62,7 @@
 
 .rodape {
   position: absolute;
-  bottom: -35px; 
-  left: 3px;
+  bottom: 5px; 
   display: flex;
   align-items: center;
   gap: 4px;
@@ -79,7 +78,6 @@
   filter: brightness(0) saturate(100%) invert(43%) sepia(90%) saturate(1478%) hue-rotate(187deg) brightness(101%) contrast(101%);
 }
 
-
 .botaoLike {
   display: flex;
   align-items: center;
@@ -92,7 +90,6 @@
 .botaoLike img {
   width: 20px;
   height: 20px;
-  filter: none;
 }
 
 .likeInfo {
@@ -107,15 +104,12 @@
 .likeInfo p {
   font-size: 14px;
   font-weight: 700;
-  margin: 0;
   color: rgba(221, 221, 221, 1);
 }
 
 .separador {
   color: rgba(221, 221, 221, 1);
   font-size: 16px;
-  line-height: 1;
-  margin: 0;
 }
 
 .likesCount {
